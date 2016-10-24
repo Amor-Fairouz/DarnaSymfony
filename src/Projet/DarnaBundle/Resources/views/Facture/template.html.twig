@@ -1,0 +1,54 @@
+
+    <page>
+    <style type="text/css">
+        #hello{
+            color: #002549;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            font-size: 40px;
+        }
+    </style>
+    <img>
+    <div id="hello">
+
+        <div style="position:absolute;top:0;left:0;z-index:1;opacity:0.6;">
+            <h1> Votre Facture </h1>
+              
+            
+    <table border="1" color="#337AB7">
+        
+        <tr> 
+                    <td> 
+                        <h5>Date de la facture</h5>
+                    </td>
+                      <td> 
+                          <h5>Nom client</h5>
+                    </td>
+                    <td> 
+                        <h5> L'engagement de votre offre</h5>
+                    </td>
+                </tr>
+                <tr> 
+                    <td> 
+                <font color="#337AB7">{{factures.date|date('Y-m-d') }}</font>
+                    </td>
+                      <td> 
+                    <font color="#337AB7">{{(factures.idclient).toString()}}</font>
+                    </td>
+                    <td> 
+             <font color="#337AB7">{{(factures.idoffre).toString()}}</font>
+                    </td>
+                </tr>
+          </table>
+             
+                
+
+
+  
+        </div>
+
+    </div>
+</page>
+    
+              
+

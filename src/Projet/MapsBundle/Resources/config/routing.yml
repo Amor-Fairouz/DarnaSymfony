@@ -1,0 +1,3 @@
+mytest_homepage:
+    path:      /map
+    defaults : {  _controller : ProjetMapsBundle:Default:index}

@@ -1,0 +1,38 @@
+{% extends 'ProjetDarnaBundle::layout9.html.twig' %}
+{% block content %}
+    
+    
+    {% block ptitre %}  {% endblock %}
+    <center><h1><font color="#337AB7"> Liste des Administrateur </font></h1></center><br>
+     <div >    <a href="  {{ path('projet_ajouter_admin') }} "><input type="submit" class="btn btn-primary" value="Ajouter un administrateur"/></a>
+     </div>
+    <br>
+        <table class="table table-hover">
+    <tr>
+        
+        <td><b> nom </b></td>
+        <td><b> prenom </b></td>
+        <td><b> Date de naissance </b></td>
+        <td><b> telephone</b> </td>
+   
+        <td><b> Email</b> </td>
+       
+        
+        
+    </tr>
+    {% for personne in personnes %}
+        <tr>
+            
+            <td> {{ personne.nom }} </td>
+              <td> {{ personne.prenom }} </td>
+            <td> {{ personne.datenaiss }} </td>
+            <td> {{ personne.tel }} </td>
+        
+                <td> {{ personne.email }} </td>
+           
+        {% endfor %}
+</table>
+    
+      {{ socialButtons() }}
+    
+       {% endblock %}

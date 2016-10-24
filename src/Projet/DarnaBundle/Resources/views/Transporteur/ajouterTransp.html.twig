@@ -1,0 +1,58 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+{% block content %}
+    <center>  
+        <center><h1><font color="#337AB7"> Ajouter Transporteur </font></h1></center><br>
+
+    <form method="POST">
+       
+        <table style="height: 200px">
+        <tr>
+             <td style="font: bold;font-size: 18px ">Nom Transporteur</td>
+             <td> 
+                 {{form_widget(transporteur.nom,{'attr':{'class':'form-control'}})}}
+                 
+             </td>
+               
+
+        </tr>
+        
+        <tr>
+            <td style="font: bold;font-size: 18px ">Prenom Transporteur</td>
+             <td>{{form_widget(transporteur.prenon,{'attr':{'class':'form-control'}})}}</td>
+        </tr>
+        
+        <tr>
+             <td style="font: bold;font-size: 18px">Telephone du Transporteurt</td>
+             <td>{{form_widget(transporteur.tel,{'attr':{'class':'form-control'}})}}</td>
+        </tr>
+        
+        
+        <tr>
+             <td style="font: bold;font-size: 18px">Adresse</td>
+             <td >{{form_widget(transporteur.adresse,{'attr':{'class':'form-control'}})}}</td>
+        </tr>
+        
+        </table>
+        <br><br>
+         <input type="submit" class="btn btn-primary" value="Ajouter">
+      
+         {{form_rest(transporteur)}}
+         
+         
+         
+      <br> <br>
+
+</form>
+         
+         
+    </form>
+    </center>
+         <br><br>
+                  <br><br>
+                           <br><br>
+         <br><br>
+  {{ socialButtons() }}
+
+         {%endblock%}

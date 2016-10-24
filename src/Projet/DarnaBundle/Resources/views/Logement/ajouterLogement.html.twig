@@ -1,0 +1,72 @@
+
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+{% block content %}
+    <center>  
+     <center><h1><font color="#337AB7"> Ajouter des Logements </font></h1></center><br>
+        <form method="POST" {{form_enctype(offre)}}>
+            <table>
+                <tr>
+                    <td style="font: bold;font-size: 18px"> Description :</td>
+                    <td>{{form_widget(offre.description,{'attr':{'class':'form-control'}})}}</td>
+                </tr>
+                <tr>
+                    <td style="font: bold;font-size: 18px">Date</td>
+                    <td>{{form_widget(offre.date,{'attr':{'class':'form-control'}})}}</td>
+                </tr>
+                <tr>
+                    <td style="font: bold;font-size: 18px">Région</td>
+                    <td>{{form_widget(offre.region,{'attr':{'class':'form-control'}})}}</td>
+                </tr>
+
+                <tr>
+                    <td style="font: bold;font-size: 18px">Prix</td>
+                    <td>{{form_widget(offre.prix,{'attr':{'class':'form-control'}})}}</td>
+                </tr>
+
+                <tr>
+                    <td style="font: bold;font-size: 18px">Surface</td>
+                    <td>{{form_widget(offre.surface,{'attr':{'class':'form-control'}})}}</td>
+                </tr>
+                <tr>
+                    <td style="font: bold;font-size: 18px">Engagement</td>
+                    <td>{{form_widget(offre.engagement,{'attr':{'class':'form-control'}})}}</td>
+                </tr>
+
+
+                <tr>
+                    <td style="font: bold;font-size: 18px">Nombre de chambre</td>
+                    <td>{{form_widget(offre.nbrchambre,{'attr':{'class':'form-control'}})}}</td>
+                </tr>
+
+                <tr>
+                    <td style="font: bold;font-size: 18px">Surface couverte</td>
+                    <td>{{form_widget(offre.surfacecouverte,{'attr':{'class':'form-control'}})}}</td>
+                </tr>
+
+
+
+                <tr>
+                    <td style="font: bold;font-size: 18px">nom gérant</td>
+                    <td>{{form_widget(offre.idgerant,{'attr':{'class':'form-control'}})}}</td>
+                </tr>
+
+                  <tr>
+                    <td style="font: bold;font-size: 18px">inserer image svp</td>
+                    <td>{{form_widget(offre.path,{'attr':{'class':'form-control'}})}}</td>
+                </tr>
+                <tr>
+                   
+
+            </table>
+                <br>
+                        <input type="submit" class="btn btn-primary" value="Ajouter">
+                  
+
+            {{form_rest(offre)}}
+        </form>
+        <br><br<br><br><br><br><br><br<br><br><br><br>
+
+  {{ socialButtons() }}
+    </center>
+{%endblock%}

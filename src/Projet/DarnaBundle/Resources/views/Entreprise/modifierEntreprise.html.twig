@@ -1,0 +1,29 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+ {% block content %}
+    <center>
+     <center><h1><font color="#337AB7"> Modifier des Entreprises </font></h1></center><br>
+        <br><br>
+        <form method="POST">
+    <table>
+        
+   <tr><td> Description :</td> <td> {{ form_widget(offre.description,{'attr':{'class':'form-control'}}) }}</td>  </tr>
+   <tr>  <td> Date  :</td>  <td>{{ form_widget(offre.date,{'attr':{'class':'form-control'}}) }}</td></tr>
+   <tr>  <td> Région: </td> <td>{{ form_widget(offre.region,{'attr':{'class':'form-control'}}) }}</td> </tr>
+   <tr> <td>Prix : </td> <td>{{ form_widget(offre.prix,{'attr':{'class':'form-control'}}) }}</td> </tr>
+ <tr><td> Surface :</td> <td> {{ form_widget(offre.surface,{'attr':{'class':'form-control'}}) }}</td>  </tr>
+   <tr>  <td> Engagement  :</td>  <td>{{ form_widget(offre.engagement,{'attr':{'class':'form-control'}}) }}</td></tr>
+    <tr><td>  Surface cuverte:</td> <td> {{ form_widget(offre.surfacecouverte,{'attr':{'class':'form-control'}}) }}</td>  </tr>
+   <tr>  <td> Nombre d'étage: </td> <td>{{ form_widget(offre.nbrEtage,{'attr':{'class':'form-control'}}) }}</td> </tr>
+     <tr><td>  image:</td> <td> {{ form_widget(offre.path,{'attr':{'class':'form-control'}}) }}</td>  </tr>  
+           <tr>
+             <td style="font: bold;font-size: 18px">Nom du gérant</td>
+             <td>{{form_widget(offre.idgerant,{'attr':{'class':'form-control'}})}}</td>
+         </tr>   
+    <tr>  <td><br><br><input type="submit" value="Envoyer" class="btn btn-primary"/></td> </tr>
+     
+         {{form_rest(offre)}}
+    </table>
+    </form>  {{ socialButtons() }}
+    </center>
+   {% endblock %}
+

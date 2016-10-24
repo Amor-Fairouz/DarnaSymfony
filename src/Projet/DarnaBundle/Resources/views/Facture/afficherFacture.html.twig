@@ -1,0 +1,59 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+{% block content %}
+<center><h1><font color="#337AB7"> Liste des Factures </font></h1></center><br>
+<div >    
+    <a href="{{ path('Ajouter_Facture')}}">
+        <input type="submit" class="btn btn-primary" value="Ajouter Facture"/></a>
+     </div>
+    <br>
+    <center>  
+        <table class="table table-hover">
+            <tr>  
+                <td> <center> <h4><font color="#337AB7">Date</font> </h4></center> </td>
+                        <td> <center> <h4><font color="#337AB7">Nom Client</font> </h4></center> </td>
+                        <td> <center> <h4><font color="#337AB7">Engagement</font> </h4></center> </td>
+
+        <td> <center> <h4><font color="#337AB7">Supprimer Facture</font></h4> </center></td>
+
+<td> <center> <h4><font color="#337AB7">Modifier Facture</font></h4> </center></td>
+<td><center> <h4><font color="#337AB7">Exporter PDF</font></h4></center></td>
+
+            </tr>
+
+
+            {% for i in Facture %}
+
+
+                <tr> 
+                    <td> 
+                <center>   <font color="#337AB7">{{ i.date }}</font></center>
+                    </td>
+                      <td> 
+                      <center>  <font color="#337AB7">{{(i.idclient).toString()}}</font></center>
+                    </td>
+                    <td> 
+                    <center> <font color="#337AB7">{{(i.idoffre).toString()}}</font></center>
+                    </td>
+                    
+
+                    <td><font color="#337AB7"> <a  href="{{ path('Supprimer_Facture',{'idfacture':i.idfacture}) }}"><center><img src="{{asset('images/delete.png')}}"/></center></a></font></td>
+                    <td><font color="#337AB7"> <a  href="{{ path('Modifier_Facture',{'idfacture':i.idfacture}) }}"><center><img src="{{asset('images/update.png')}}"/></center></a></font></td>                   
+                    <td><font color="#337AB7"> <a  href="{{ path('Myapp_PDF',{'idfacture':i.idfacture}) }}"> <center><img src="{{asset('images/pdf.jpg')}}"/></center></a></font></td>                    
+
+                </tr>
+                {% endfor %}
+        </table>
+        
+    </center>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+             {{ socialButtons() }}     
+{% endblock %}

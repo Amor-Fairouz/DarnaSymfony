@@ -1,0 +1,61 @@
+{# empty Twig template #}
+
+ 
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+  {% block  content %}
+
+
+
+   
+
+                    
+                    <center>
+                                   
+<div class="col-sm-7">
+    <div class="panel panel-default">
+                    <div class="panel-heading">
+                                <h3 class="panel-title">Modifier et Ajouter des Remarques</h3>
+                            </div>        
+                <form method="POST" >
+               
+                    <br >
+               La question : {{form_widget(form.question,{'attr':{'class':'form-control'}})}}<br>
+               <br>
+                        Remarque : {{form_widget(form.reponse,{'attr':{'class':'form-control'}})}}
+                       
+
+                        <br>
+                       
+                        
+                        Identifiant du client : {{form_widget(form.idClient,{'attr':{'class':'form-control'}})}}
+                         
+                        
+<br><br><center>{{form_widget(form.Modifier,{'attr':{'class':'btn btn-default'}})}}</center>
+{{form_rest(form)}}   
+
+
+
+                     
+</form>
+                <!-- /.row -->
+</div>
+            {{ socialButtons() }}    
+</div> 
+                <!-- /.row -->
+                
+                    </center>
+               
+               
+          
+        <!-- /#page-wrapper -->
+
+    
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+
+ 
+
+
+{% endblock%}

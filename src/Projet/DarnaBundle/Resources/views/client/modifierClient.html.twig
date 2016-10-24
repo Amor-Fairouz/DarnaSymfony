@@ -1,0 +1,25 @@
+
+{% extends 'ProjetDarnaBundle::layout9.html.twig' %}
+{% block ptitre %} Modifier Client{% endblock %}
+{% block content %}
+    <h1> modifier un Client </h1>
+ <form method="POST">
+   <table >
+       
+        <tr><td> Nom :</td> <td> {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}</td>  </tr>
+  <tr>  <td> Prenom :</td>  <td>{{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}</td></tr>
+   <tr>  <td>Date de naisance : </td> <td>{{ form_widget(form.datenaiss, {'attr': {'class': 'form-control'}}) }}</td> </tr>
+   <tr> <td>Pays : </td> <td>{{ form_widget(form.pays, {'attr': {'class': 'form-control'}}) }}</td> </tr>
+    <tr> <td>Telephone : </td> <td>{{ form_widget(form.tel, {'attr': {'class': 'form-control'}}) }}</td> </tr>
+    <tr> <td>E-Mail : </td> <td> {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}</td> </tr>
+        <tr> <td>Password : </td> <td>{{ form_widget(form.password, {'attr': {'class': 'form-control'}}) }}</td> </tr>
+
+    <tr> <td>Adresse : </td> <td>{{ form_widget(form.adresse, {'attr': {'class': 'form-control'}}) }}</td> </tr>
+
+    <tr>  <td> <br><br>{{ form_widget(form.Ajouter, {'attr': {'class': 'btn btn-primary'}})  }}</td> </tr>
+     {{form_rest(form)}}
+         
+    </table>
+</form>  {{ socialButtons() }}
+
+{% endblock %}

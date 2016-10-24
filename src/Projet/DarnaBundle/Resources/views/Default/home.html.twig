@@ -1,0 +1,56 @@
+{% extends "ProjetDarnaBundle::layout.html.twig" %}
+
+{% block content %}
+    
+    <center>
+    
+    <form method="POST" {{form_enctype(offre)}}>
+ 
+  <br><br><br><br><br><br><br>
+ <div class="panel panel-primary">
+               <div class="panel-heading">
+                                <h3 >Recherche      Avancée</h3>
+                            </div>
+     
+      <div class="panel-body">
+ 
+      <div >
+                       
+                            </div>
+        <table>
+            <tr>
+                <td><h3 >Type</h3></td>
+                <td></td>
+                <td><h3 >Prix minimal</h3></td>
+                <td></td>
+                <td><h3 >Prix maximal</h3></td>
+                <td></td>
+                <td><h3 >Région</h3></td>
+                <td></td>
+                <td><h3 >Engagement</h3> 
+                
+            </tr>
+            <tr>
+                <td> {{form_widget(offre.type)}} </td>
+                <td><font color="white">__________</font></td>
+              <td> {{form_widget(offre.prixMin)}}</td>
+             <td><font color="white">__________</font></td>
+           <td>  {{form_widget(offre.prixMax)}}</td>
+           <td><font color="white">__________</font></td>
+            <td> {{form_widget(offre.region)}}</td>
+        <td><font color="white">__________</font></td>
+       <td> {{form_widget(offre.engagement)}}</td>
+</tr>
+        </table>
+      <br>
+     {{form_widget(offre.Rechercher,{'attr':{'class':'btn btn-primary'}})}}
+{{form_rest(offre)}}
+   
+    
+      
+             
+ </div>  </div>
+ 
+ </form>     
+       </center>
+{%endblock%}

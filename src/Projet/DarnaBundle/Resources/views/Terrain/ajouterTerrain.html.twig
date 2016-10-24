@@ -1,0 +1,57 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+{% block content %}
+    <center>  
+    <center><h1><font color="#337AB7"> Ajouter des Terrains </font></h1></center><br>
+    <form method="POST">
+       
+        <table>
+         <tr>
+             <td style="font: bold;font-size: 18px"> Description :</td>
+             <td>{{form_widget(offre.description,{'attr':{'class':'form-control'}})}}</td>
+         </tr>
+         <tr>
+             <td style="font: bold;font-size: 18px">Date</td>
+             <td>{{form_widget(offre.date)}}</td>
+         </tr>
+           <tr>
+             <td style="font: bold;font-size: 18px">Région</td>
+             <td>{{form_widget(offre.region,{'attr':{'class':'form-control'}})}}</td>
+         </tr>
+         
+         <tr>
+             <td style="font: bold;font-size: 18px">Prix</td>
+             <td>{{form_widget(offre.prix,{'attr':{'class':'form-control'}})}}</td>
+         </tr>
+         
+         <tr>
+             <td style="font: bold;font-size: 18px">Surface</td>
+             <td>{{form_widget(offre.surface,{'attr':{'class':'form-control'}})}}</td>
+         </tr>
+         <tr>
+             <td style="font: bold;font-size: 18px">Engagement</td>
+             <td>{{form_widget(offre.engagement,{'attr':{'class':'form-control'}})}}</td>
+         </tr>
+           <tr>
+             <td style="font: bold;font-size: 18px">Vocation</td>
+             <td>{{form_widget(offre.vocation,{'attr':{'class':'form-control'}})}}</td>
+         </tr>
+         
+         <tr>
+             <td style="font: bold;font-size: 18px">Nom du gérant</td>
+             <td>{{form_widget(offre.idgerant,{'attr':{'class':'form-control'}})}}</td>
+         </tr>
+         <tr>
+                    <td style="font: bold;font-size: 18px">inserer image svp</td>
+                    <td>{{form_widget(offre.path,{'attr':{'class':'form-control'}})}}</td>
+                </tr>
+         
+        </table>
+         
+         <input type="submit" class="btn btn-primary" value="Ajouter">
+         {{form_rest(offre)}}
+         
+    </form>  {{ socialButtons() }}
+    </center>
+         {%endblock%}

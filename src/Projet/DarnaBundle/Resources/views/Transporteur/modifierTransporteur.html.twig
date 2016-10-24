@@ -1,0 +1,21 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+ {% block content %}
+    <center>
+     <center><h1><font color="#337AB7"> Modifier des Transporteurs </font></h1></center><br>
+        <br><br>
+        <form method="POST">
+    <table>
+   <tr><td> Nom :</td> <td> {{ form_widget(transporteur.nom,{'attr':{'class':'form-control'}}) }}</td>  </tr>
+   <tr>  <td> Prnom  :</td>  <td>{{ form_widget(transporteur.prenon,{'attr':{'class':'form-control'}}) }}</td></tr>
+   <tr>  <td> télephone: </td> <td>{{ form_widget(transporteur.tel,{'attr':{'class':'form-control'}}) }}</td> </tr>
+   <tr>  <td> Adresse: </td> <td>{{ form_widget(transporteur.adresse,{'attr':{'class':'form-control'}}) }}</td> </tr>
+            
+    <tr>  <td><br><br><input type="submit" value="Envoyer"/></td> </tr>
+     
+         {{form_rest(transporteur)}}
+    </table>
+    </form>
+    {{ socialButtons() }}
+    </center>
+   {% endblock %}
+

@@ -1,0 +1,137 @@
+{% extends "ProjetDarnaBundle::layout.html.twig" %}
+
+{% block  content %}
+      
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<meta charset="utf-8">
+<meta name = "format-detection" content = "telephone=no" />
+<link rel="icon" href="{{asset('images/favicon.ico')}}">
+<link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" />
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
+<link rel="stylesheet" href="{{asset('css1/style.css')}}">
+
+
+<link rel="stylesheet" href="{{asset('css4/bootstrap.css')}}">
+<link rel="stylesheet" href="{{asset('css4/datepicker.css')}}">
+<script src="js4/bootstrap.min.js"></script>
+<script src="js4/bootstrap-datepicker.js"></script>
+
+
+<!--=====================
+          Content
+======================-->
+<section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - August11, 2014!</div>
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">
+        <h2 class="ta__center">Fixer un Rendez-vous</h2>
+        <div class="shuffle-group">
+          <div class="row">
+            <div class="grid_8">
+              <div data-si-mousemove-trigger="100"  class="shuffle-me offset__1">
+                
+                
+            
+
+ 
+   <form   method="POST" action="" id="contact-form" >
+ 
+        <div class="grid_4">
+                 
+        
+            Lieu :<br>
+         {{form_widget(form.lieu,{'attr':{'class':'form-control','id':'form-control'}})}}<br><br>
+       
+         
+         <br>Date
+         {{form_widget(form.date)}}    <br><br>
+         
+          
+            
+         
+           
+        <br><br>Client:
+              {{form_widget(form.idClient,{'attr':{'class':'form-control','id':'form-control'}})}}<br><br>
+        
+        
+        
+              <br>Offre:
+              {{form_widget(form.idOffre,{'attr':{'class':'form-control','id':'comments'}})}}<br><br>
+            
+                
+        {{form_rest(form) }}
+         <center>
+            <input type="submit" value="Ajouter" class="btn" onclick="{{path('rechercher_Tous')}}" >
+         </center>
+      
+                 
+                 
+                 
+                 
+       
+   
+        
+
+                
+              </div>
+         </form>
+            </div>
+            </div>
+         
+            <div class="grid_4">
+              <div data-si-mousemove-trigger="100" class="shuffle-me">
+                <a href="gallery.html" class="info" target="_blank"></a>
+                <div class="images">
+                  <img src="{{asset('images/rendez.jpg')}}" alt="">
+                  <img src="{{asset('images/maison1.jpg')}}" alt="">
+                  <img src="{{asset('images/rendez.jpg')}}" alt="">
+                </div>
+              </div>
+              <div data-si-mousemove-trigger="100" class="shuffle-me offset__1">
+                <a href="gallery.html" class="info" target="_blank"></a>
+                <div class="images">
+                  <img src="{{asset('images/maison1.jpg')}}" alt="">
+                  <img src="{{asset('images/rendez.jpg')}}" alt="">
+                  <img src="{{asset('images/maison1.jpg')}}" alt="">
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="clear"></div>
+           
+          
+            </div>
+          </div>
+      </div>
+    </div>
+
+  <div class="sep-1"></div>
+  
+
+</section>
+<!--==============================
+              footer
+=================================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12"> 
+        <h2>Contacts</h2>
+        <div class="footer_phone">+1 800 559 6580</div>
+        <a href="#" class="footer_mail">info@demolink.org</a>
+        <div class="sub-copy">Website designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a></div>
+      </div>
+    </div>
+
+  </div>  
+</footer>
+<a href="#" id="toTop" class="fa fa-chevron-up"></a>
+</body>
+
+</html>
+
+{% endblock %}

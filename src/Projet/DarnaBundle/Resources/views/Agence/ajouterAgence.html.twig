@@ -1,0 +1,54 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+{% block content %}
+    <center>  
+        <center><h1><font color="#337AB7"> Ajouter Agence </font></h1></center><br>
+
+    <form method="POST">
+       
+        <table style="height: 200px">
+        <tr>
+             <td style="font: bold;font-size: 18px ">Adresse</td>
+             <td> 
+                 {{form_widget(agence.adresse,{'attr':{'class':'form-control'}})}}
+                 
+             </td>
+               
+
+        </tr>
+        
+        <tr>
+            <td style="font: bold;font-size: 18px ">Télephone</td>
+             <td>{{form_widget(agence.tel,{'attr':{'class':'form-control'}})}}</td>
+        </tr>
+        
+        <tr>
+             <td style="font: bold;font-size: 18px">Nom</td>
+             <td>{{form_widget(agence.nom,{'attr':{'class':'form-control'}})}}</td>
+        </tr>
+        
+        
+        
+        </table>
+        <br><br>
+         <input type="submit" class="btn btn-primary" value="Ajouter">
+      
+         {{form_rest(agence)}}
+         
+         
+         
+      <br> <br>
+
+</form>
+         
+         
+    {{ socialButtons() }}
+    </center>
+         <br><br>
+                  <br><br>
+                           <br><br>
+         <br><br>
+
+
+         {%endblock%}

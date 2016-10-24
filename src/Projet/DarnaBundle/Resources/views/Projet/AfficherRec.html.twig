@@ -1,0 +1,84 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+{% block content %} 
+
+
+        
+      <center>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Liste des Reclamations</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr class="sucess">
+                                                    <th class="success">Message du client</th>
+                                                <th class="success">Nom du Client </th>
+                                            <th class="success"> </th>
+                                               
+                                     {% for r in Reclamation %}    
+                                           
+                                     
+                                           <tr class="active">
+                            <td>{{r.question}}</td>
+                           
+                             
+                             <td>{{r.idclient.nom}} {{r.idclient.prenom}}</td>
+                              <td>
+                                     <font class="btn btn-sm btn-success"> 
+                                    <a  href="{{ path('ModifierRec',{'id':r.id}) }}">modifier</a>
+                                    </font>
+                                    
+                                  <font class="btn btn-sm btn-warning"> 
+                                    <a  href="{{ path('SupprimerRec',{'id':r.id}) }}">supprimer</a> </font>
+                             
+                                     <font class="btn btn-sm btn-warning"> 
+                                    <a  href="{{ path('RechercheRec') }}">Recherche</a> </font>
+                                    
+                                    
+                                    <a  href="{{ path('projet_mail_sendMail', { 'mail': r.idclient.email }) }}"><font class="btn btn-sm btn-warning"> repondre</font></a>
+                                 
+                                   </td>
+                                      </tr> 
+                                   
+                                            {% endfor %}
+                       
+                                
+                             
+                       
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-right">
+                                        <div class="search-bar">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="search-bar-inner">
+                                <a id="menu-toggle" href="#menu" data-toggle="collapse"
+                                   class="accordion-toggle btn btn-inverse visible-phone"
+                                   rel="tooltip" data-placement="bottom" data-original-title="Show/Hide Menu">
+                                    <i class="icon-sort"></i>
+                                </a>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                                        </i></a>
+                                </div>
+                            </div>
+                        </div>  {{ socialButtons() }}
+                    </center>
+                                            
+               
+
+        {% endblock %}
+
+
+
+

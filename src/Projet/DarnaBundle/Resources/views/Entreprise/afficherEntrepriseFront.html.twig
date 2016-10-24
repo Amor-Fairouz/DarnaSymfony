@@ -1,0 +1,44 @@
+{% extends "ProjetDarnaBundle::layout.html.twig" %}
+
+
+{% block content %}
+    <center>  
+        
+       <table border="0">
+
+            {% for i in offre %}
+                <div class="grid_4 preffix_1">
+                 <h3 class="head__1">Nos Logements</h3>
+                 <blockquote class="bq_1">
+       <img src="{{ asset('uploads/documents/'~i.path) }}" alt="monimg2" width="100" height="100"/>
+          <div class="extra_wrapper">
+              <div class="bq_title"><font color="red" >Profitez</font> </div>
+          </div>
+          <div class="clear"></div>
+                <div align="left">  <font color="blue" > {{ i.date }}</font></div><br>
+                <font color="purple"> {{ i.description }}</font>
+                <br> 
+                   se trouve à  <font color="purple"> {{ i.region }}</font>
+                    <br> 
+                  coute  <font color="purple"> {{ i.prix }}</font> Dinars
+                   <br> 
+                 sa surface est :  <font color="purple"> {{ i.surface }}</font> m²
+                  <br> 
+                   engagé par  <font color="purple"> {{ i.engagement }}</font>
+                    <br> 
+                   possede une surface couverte de  <font color="purple"> {{ i.surfacecouverte }}</font>m²
+                    <br>
+                  et contient  <font color="purple"> {{ i.nbrEtage }}</font> étages
+                  <br>
+                  
+                  <a onclick="window.open('../../web/facebook-php-sdk-master/src/envoyer.php?message={{ i.description }}&description={{ i.description }}&region={{ i.region }}&prix={{ i.prix }}&type={{ i.type }}','nom_de_ma_popup','menubar=no, scrollbars=no, top=100, left=100, width=300, height=200');"><img src="{{asset('images/partager.png')}}" /></a>
+                  <br>
+          <a href="{{path('AjoutRendezVous',{'idOffre':i.id})}}" class="btn">Reservez un rendez-vous</a>
+          </tr>
+             </blockquote>
+      </div>
+            </table>   
+         {% endfor %}
+        </table>  </center>
+{% endblock %}
+

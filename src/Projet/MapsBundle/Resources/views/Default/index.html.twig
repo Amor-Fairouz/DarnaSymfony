@@ -1,0 +1,134 @@
+{% extends "ProjetDarnaBundle::layout.html.twig" %}
+
+
+{% block content %}
+
+       
+    
+    <div class="grid_5">
+        <h2>A Propos de Darna</h2>
+        <div class="text1 tx__1"> Crée en 2015,par le Groupe Ledears est une agence immobilière familiale située à Tunis. 
+</div>
+        <p>Agence immobilière à taille humaine, elle s'efforce de rompre avec les méthodes de travail à la chaîne des agences standardisées.
+        <p>Nous privilégions la qualité de nos mandats que nous travaillons pleinement. </p>
+            
+        <p>Nous abordons ce métier différemment sous l'angle du cousu main, du sur mesure.</p>
+         <p>Nous proposons aux propriétaires et futurs acquéreurs les services essentiels pour valoriser.
+</p>
+        
+        <div class="grid_4" align="center">
+<p>  <strong>Nos Services</strong>     </p>
+        <p>
+Évaluation des biens immobiliers,
+Gestion des biens immobiliers
+Conseil en Immobilier (achat, location, vente)
+Gestion des biens immobiliers
+Notre Charte <a >
+    <p><strong>Nos Objectifs</strong></a>,
+        <p>
+            Le BON Choix<br>
+            Le BON Prix<br>
+            Le SERVICE après transaction<br>    
+        </p></div>
+   
+    
+
+
+
+
+
+
+
+
+ 
+    
+   
+    
+    
+        
+        <style type="text/css">
+             #map-canvas { height: 400px ;width: 1000px;  margin: 100; padding: 1000;}
+        </style>
+        <script type="text/javascript" 
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7m2WkoYm1XGAoPI8bCB9RQR-yKAjaVCk">
+        </script>
+         <script type="text/javascript">
+            function initialize()
+            {
+                var lat = document.getElementById('lat').value;
+                var lng = document.getElementById('lng').value;
+                var myCenter = new google.maps.LatLng(lat, lng);
+                var mapOptions = {
+                    center: {lat: 10.1956, lng: 10.1956},
+                    zoom: 8
+                };
+                
+             
+               
+               
+                var map = new google.maps.Map(document.getElementById('map-canvas'),
+                        mapOptions);
+                           
+       var myLatlng1 = new google.maps.LatLng(36.45, 10.73);
+
+            {% for r in Locations %} 
+                var myLatlng = new google.maps.LatLng({{r.latitude}}, {{r.longitude}});
+               
+   
+                    var mapOptions = {
+                    zoom: 10,
+                    center: myLatlng
+                    
+                }  
+                 {% endfor%} 
+                
+                
+                var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+                
+                // To add the marker to the map, use the 'map' property
+               
+  
+    var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: "Cinéma Pathé Bellecour"
+                });
+                
+                var marker1 = new google.maps.Marker({
+                    position: myLatlng1,
+                    map: map,
+                    title: "Cinéma Pathé Bellecour"
+                })
+                
+                
+                
+                
+                var myWindowOptions = {
+                    content:
+                         '<h6>Cinéma Pathé Bellecour</h6>' +
+                         '<p><a href="http://www.cinemasgaumontpathe.com/cinemas/cinema-pathe-lyon-bellecour/" title="Site officiel">Visiter le site officiel</a></p>'
+                };
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+   
+   
+       
+            <div id="map-canvas"   >  
+                   {% for r in Locations %}
+        <input id="lat" value= {{r.latitude}}  readonly/> 
+        <input id="lng" value= {{r.longitude}}/>
+        {% endfor %}
+        </div>
+      
+   
+
+{% endblock %}
+
+
+
+
+
+
+
+

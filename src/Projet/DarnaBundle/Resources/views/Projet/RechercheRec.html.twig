@@ -1,0 +1,86 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+{% block content %}
+
+               
+           
+
+               <form action="{{ path('RechercheRec') }}" method="POST">
+
+
+                   
+        <div> 
+
+
+        
+
+
+            <div class="form-group input-group">
+
+   
+                {{form_widget(Reclamation.question,{'attr':{'class':'form-control'}})}}
+
+
+                <span class="input-group-btn">
+                
+                    {{ form_widget(Reclamation.question)}}
+                   
+                      <div class="btn btn-default">
+                          <i clas="fa fa-search">
+                       {{form_rest(Reclamation)}}
+                          </i>
+                    </div>
+                 
+                </span>
+
+            </div>
+    
+            <center>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Liste des Reclamations</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped ">
+                                <thead>
+                                    <tr class="sucess">
+                                        <th class ="success"> Message du client</th>
+                                        <th class="success">Nom du Client </th>
+                                         <th class="success">Supprimer </th>
+                                        {% for r in Reclamations %}
+
+
+                                        <tr class="active">
+                                            <td class="">{{r.question}}</td>
+                                            <td class="">{{r.idclient.nom}} {{r.idclient.prenom}}</td> 
+                                               <td>
+                                     <font class="btn btn-sm btn-success"> 
+                                    <a  href="{{ path('ModifierRec',{'id':r.id}) }}">modifier</a>
+                                    </font>
+                                    
+                                  <font class="btn btn-sm btn-warning"> 
+                                    <a  href="{{ path('SupprimerRec',{'id':r.id}) }}">supprimer</a> </font>
+                              <a  href="{{ path('projet_mail_sendMail', { 'mail': r.idclient.email }) }}"><font class="btn btn-sm btn-warning"> repondre</font></a>
+                                   </td>
+
+                                        </tr> 
+
+                                    {% endfor %}
+                                    
+                            </table>   
+                                    <div class="alert alert-danger">
+                    <strong>Chercher Vos Messages !! </strong>
+                </div>
+                        </div>     </div>   </div>    
+        </div>  
+
+    </form>       
+      
+           
+            {{ socialButtons() }}     
+       
+{% endblock%}
+
+
+
+

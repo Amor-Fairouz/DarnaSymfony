@@ -1,0 +1,79 @@
+Alerte:
+    type: entity
+    table: alerte
+    indexes:
+        idClient:
+            columns:
+                - idClient
+        idOffre:
+            columns:
+                - idOffre
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        prixmin:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+            column: prixMin
+        prixmax:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+            column: prixMax
+        region:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+        engagement:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+        typedebien:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            column: typedeBien
+        surface:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+    manyToOne:
+        idclient:
+            targetEntity: Personne
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idClient:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idoffre:
+            targetEntity: Offre
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idOffre:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

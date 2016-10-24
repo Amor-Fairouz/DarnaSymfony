@@ -1,0 +1,22 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+ {% block content %}
+    <center>
+     <center><h1><font color="#337AB7"> Modifier des Agences </font></h1></center><br>
+        <br><br>
+        <form method="POST">
+    <table>
+   <tr><td> Adresse  :</td> <td> {{ form_widget(agence.adresse,{'attr':{'class':'form-control'}}) }}</td>  </tr>
+   <tr>  <td> Télephone  :</td>  <td>{{ form_widget(agence.tel,{'attr':{'class':'form-control'}}) }}</td></tr>
+   <tr>  <td> Nom: </td> <td>{{ form_widget(agence.nom,{'attr':{'class':'form-control'}}) }}</td> </tr>
+
+            
+    <tr>  <td><br><br><input type="submit" value="Envoyer"/></td> </tr>
+     
+         {{form_rest(agence)}}
+    </table>
+    </form>
+    {{ socialButtons() }}
+    </center>
+   {% endblock %}
+
+

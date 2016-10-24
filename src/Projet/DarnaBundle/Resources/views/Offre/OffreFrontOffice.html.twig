@@ -1,0 +1,27 @@
+{% extends "ProjetDarnaBundle::layout.html.twig" %}
+
+{% block content %}
+
+<script>
+ $(window).load(function(){
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $('#stuck_container').tmStickUp({});  
+ }); 
+
+</script>
+
+<section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - August11, 2014!</div>
+
+ <div class="grid_4">
+        <h2> Nos Propositions</h2>
+        <ul class="list-1">
+<li><span></span><a href="{{ path('afficher_EntrepriseEF') }}"><div class="fa fa-chevron-right"></div> Entreprise </a></li>
+<li><span></span><a href="{{ path('afficher_LogementLF') }}"><div class="fa fa-chevron-right"></div> Logement </a></li>
+<li><span></span><a href="{{ path('afficher_TerrainTF') }}"><div class="fa fa-chevron-right"></div> Terrain </a></li>
+         
+        </ul>
+      </div>
+   
+</section>
+
+{% endblock %}

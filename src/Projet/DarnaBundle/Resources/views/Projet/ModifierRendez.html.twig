@@ -1,0 +1,241 @@
+{# empty Twig template #}
+
+ {# empty Twig template #}
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+  {% block  content %}
+
+
+
+
+
+    
+
+    <div id="wrapper">
+
+       
+         
+                
+                 
+                 
+                               
+              
+            
+       
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+                
+
+               
+
+                <div >
+    
+     
+                 <div >
+    
+      
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                              
+                                <div class="col-sm-7">
+    <div class="panel panel-default">
+                    <div class="panel-heading">
+                                <h3 class="panel-title">Modifier les details des Rendez-vous</h3>
+                            </div>        
+                <form method="POST">
+               
+                    <br>
+              Le Lieu : {{form_widget(form.lieu,{'attr':{'class':'form-control'}})}}<br>
+               
+                        La Date : {{form_widget(form.date,{'attr':{'class':'form-control'}})}}
+                        <br>
+                        
+                     client : {{form_widget(form.idClient,{'attr':{'class':'form-control'}})}}<br>
+
+                        
+                 Description de l'offre : {{form_widget(form.idOffre,{'attr':{'class':'form-control'}})}}<br>
+                          
+<br><br><center>{{form_widget(form.Modifier,{'attr':{'class':'btn btn-default'}})}}</center>
+  {{form_rest(form)}}
+                     
+</form>
+                <!-- /.row -->
+</div>
+               
+</div> 
+                                
+                                
+                            </div>
+                            </div>
+                        </div>
+                                 
+                    </div>   
+                   
+                <!-- /.row -->
+</div>
+               
+</div> 
+                <!-- /.row -->
+                
+         
+               
+               
+            </div>
+                    
+                                            
+          
+                  
+                
+                    
+             
+               
+          
+
+        {{ socialButtons() }} 
+    
+
+{% endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block rendezActive %}
+<li class="active">
+                        <a href="#"><i class="fa fa-fw fa-desktop"></i> Rendez-vous</a>
+                    </li>
+
+{% endblock %}
+
+
+{% block listRendez %}
+
+  
+<div >
+    
+      <center>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Liste des Rendez-vous</h3>
+                            </div>
+                            <div class="panel-body">
+                              
+                                <div class="col-sm-7">
+    <div class="panel panel-default">
+                    <div class="panel-heading">
+                                <h3 class="panel-title">Modifier les details des Rendez-vous</h3>
+                            </div>        
+                <form method="POST">
+               
+                    <br>
+              Le Lieu : {{form_widget(form.lieu,{'attr':{'class':'form-control'}})}}<br>
+               
+                        La Date : {{form_widget(form.date,{'attr':{'class':'form-control'}})}}
+                        <br>
+                        
+                    Identifiant du client : {{form_widget(form.idClient,{'attr':{'class':'form-control'}})}}<br>
+
+                        
+                Identifiant de l'offre : {{form_widget(form.idOffre,{'attr':{'class':'form-control'}})}}<br>
+                          
+<br><br><center>{{form_widget(form.Modifier,{'attr':{'class':'btn btn-default'}})}}</center>
+  {{form_rest(form)}}
+                     
+</form>
+                <!-- /.row -->
+</div>
+               
+</div> 
+                                
+                                
+                            </div>
+                        </div>
+                                  </center>
+                    </div>
+             
+              {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

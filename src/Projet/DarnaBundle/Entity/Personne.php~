@@ -1,0 +1,105 @@
+<?php
+
+namespace Projet\DarnaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Personne
+ *
+ * @ORM\Table(name="personne", indexes={@ORM\Index(name="idAgence", columns={"idAgence"})})
+ * @ORM\Entity
+ */
+class Personne
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=30, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=30, nullable=false)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="datenaiss", type="string", length=20, nullable=false)
+     */
+    private $datenaiss;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tel", type="string", length=20, nullable=false)
+     */
+    private $tel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville", type="string", length=30, nullable=true)
+     */
+    private $ville;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pays", type="string", length=30, nullable=true)
+     */
+    private $pays;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=30, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=40, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=50, nullable=true)
+     */
+    private $adresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=5, nullable=false)
+     */
+    private $type;
+
+    /**
+     * @var \Agence
+     *
+     * @ORM\ManyToOne(targetEntity="Agence")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idAgence", referencedColumnName="id")
+     * })
+     */
+    private $idagence;
+
+
+}

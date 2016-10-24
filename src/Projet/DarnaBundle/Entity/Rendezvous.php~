@@ -1,0 +1,59 @@
+<?php
+
+namespace Esprit\DarnaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Rendezvous
+ *
+ * @ORM\Table(name="rendezvous", indexes={@ORM\Index(name="idClient", columns={"idClient", "idOffre"}), @ORM\Index(name="idOffre", columns={"idOffre"}), @ORM\Index(name="IDX_C09A9BA8A455ACCF", columns={"idClient"})})
+ * @ORM\Entity
+ */
+class Rendezvous
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lieu", type="string", length=30, nullable=false)
+     */
+    private $lieu;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date", type="string", length=20, nullable=false)
+     */
+    private $date;
+
+    /**
+     * @var \Personne
+     *
+     * @ORM\ManyToOne(targetEntity="Personne")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idClient", referencedColumnName="id")
+     * })
+     */
+    private $idclient;
+
+    /**
+     * @var \Offre
+     *
+     * @ORM\ManyToOne(targetEntity="Offre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idOffre", referencedColumnName="id")
+     * })
+     */
+    private $idoffre;
+
+
+}

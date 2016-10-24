@@ -1,0 +1,31 @@
+Agence:
+    type: entity
+    table: agence
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        adresse:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        tel:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        nom:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

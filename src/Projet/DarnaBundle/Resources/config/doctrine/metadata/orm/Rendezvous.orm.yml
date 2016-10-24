@@ -1,0 +1,56 @@
+Rendezvous:
+    type: entity
+    table: rendezvous
+    indexes:
+        idClient:
+            columns:
+                - idClient
+                - idOffre
+        idOffre:
+            columns:
+                - idOffre
+        IDX_C09A9BA8A455ACCF:
+            columns:
+                - idClient
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        lieu:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+        date:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+    manyToOne:
+        idclient:
+            targetEntity: Personne
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idClient:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idoffre:
+            targetEntity: Offre
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idOffre:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

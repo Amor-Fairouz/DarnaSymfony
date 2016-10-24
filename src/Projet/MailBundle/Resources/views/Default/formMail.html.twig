@@ -1,0 +1,95 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+{% block content %}
+
+
+                <!-- /.row -->
+
+                <div >
+    
+      
+                    
+               
+    <form action="{{ path('projet_mail_sendMail', { 'mail': mail })}}"  method="POST">
+       
+        
+        <br/>
+       
+            
+        Sujet:
+        <center> <input type="text" name="question"  class="form-control"/> </center>
+        
+       
+        Email:
+        <center> <input   type="text" name="email" value= "{{mail}}" class="form-control" readonly/> </center> <br></br>   
+        
+        
+        Text:
+        <center>   <textarea name="reponse" class="form-control"></textarea> <br></br> </center>
+      
+      
+        <center>   <input type="submit" value="Envoyer Email"/> </center>
+    
+    </form>
+                       
+</div>
+
+           
+
+{% endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+

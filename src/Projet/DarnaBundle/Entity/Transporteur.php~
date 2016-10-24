@@ -1,0 +1,53 @@
+<?php
+
+namespace Projet\DarnaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Transporteur
+ *
+ * @ORM\Table(name="transporteur")
+ * @ORM\Entity
+ */
+class Transporteur
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=30, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenon", type="string", length=30, nullable=false)
+     */
+    private $prenon;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tel", type="integer", nullable=false)
+     */
+    private $tel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=40, nullable=false)
+     */
+    private $adresse;
+
+
+}

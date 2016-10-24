@@ -1,0 +1,87 @@
+<?php
+
+namespace Projet\DarnaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Alerte
+ *
+ * @ORM\Table(name="alerte", indexes={@ORM\Index(name="idClient", columns={"idClient"}), @ORM\Index(name="idOffre", columns={"idOffre"})})
+ * @ORM\Entity
+ */
+class Alerte
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prixMin", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $prixmin;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prixMax", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $prixmax;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="region", type="string", length=30, nullable=false)
+     */
+    private $region;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="engagement", type="string", length=20, nullable=false)
+     */
+    private $engagement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="typedeBien", type="string", length=20, nullable=false)
+     */
+    private $typedebien;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="surface", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $surface;
+
+    /**
+     * @var \Personne
+     *
+     * @ORM\ManyToOne(targetEntity="Personne")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idClient", referencedColumnName="id")
+     * })
+     */
+    private $idclient;
+
+    /**
+     * @var \Offre
+     *
+     * @ORM\ManyToOne(targetEntity="Offre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idOffre", referencedColumnName="id")
+     * })
+     */
+    private $idoffre;
+
+
+}

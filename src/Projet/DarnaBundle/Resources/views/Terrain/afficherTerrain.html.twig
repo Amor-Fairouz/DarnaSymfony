@@ -1,0 +1,62 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+{% block content %}
+    
+    <center><h1><font color="#337AB7"> Liste des Terrains </font></h1></center><br>
+    
+     <table cellspacing=6 width=100%> <tr>
+             <td><div align="left" >    <a href="  {{ path('ajouter_Terrain') }} "><input type="submit" class="btn btn-primary" value="Ajouter une terrain"/></a>
+     </div></td>
+     
+    <td> <div align="right">           <a href="  {{ path('rechercher_Terrain') }} "><input type="submit" class="btn btn-primary" value="Rechercher une terrain"/></a>
+    </div></td>
+</tr></table>
+    <br>
+    <center>  
+        
+            <table class="table table-hover">
+            <tr>
+                
+                <td> Déscription :</td> 
+                <td> Date  </td>
+                <td> Région </td>
+                <td> Prix </td>
+                <td> Surface </td>
+                <td> Engagement </td>
+                <td> Vocation</td>
+               
+                <td> Image</td>
+                
+                <td> <font color="red">Supprimer</font></td>
+                <td><font color="green"> Modifier</font></td>
+                
+            </tr>
+
+
+            {% for i in offre %}
+
+
+                <tr> <td> <font color="purple"> {{ i.description }}</font></td>
+                    <td> <font color="purple"> {{ i.date }}</font></td>
+                    <td> <font color="purple"> {{ i.region }}</font></td>
+                    <td><font color="purple"> {{ i.prix }}</font></td>
+                    <td><font color="purple"> {{ i.surface }}</font></td>
+                    <td><font color="purple"> {{ i.engagement }}</font></td>
+                    <td><font color="purple"> {{ i.vocation }}</font></td>
+                   
+  <td><img src="{{ asset('uploads/documents/'~i.path) }}" alt="monimg2" width="100" height="100"/></td>
+                    
+          
+          <td><font color="purple"> <a  href="{{ path('Supprimer_Terrain',{'id':i.id}) }}"><img src="{{asset('images/delete.png')}}"/></a></font></td>
+         <td><font color="purple"> <a  href="{{ path('modifier_Terrain',{'id':i.id}) }}"><img src="{{asset('images/update.png')}}"/></a></font></td>
+         <td>                  <a onclick="window.open('../../web/facebook-php-sdk-master/src/envoyer.php?message={{ i.description }}&description={{ i.description }}&region={{ i.region }}&prix={{ i.prix }}&type=t','nom_de_ma_popup','menubar=no, scrollbars=no, top=100, left=100, width=300, height=200');"><img src="{{asset('images/partager.png')}}" /></a></td>
+
+         
+                </tr>
+                {% endfor %}
+        </table> 
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   {{ socialButtons() }}   </center>
+{% endblock %}
+

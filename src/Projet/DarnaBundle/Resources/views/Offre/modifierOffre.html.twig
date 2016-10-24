@@ -1,0 +1,26 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+ {% block content %}
+    <center>
+          <h1>Modifier une Offre</h1>
+        <br><br>
+        <form method="POST">
+    <table>
+   <tr><td> Description :</td> <td> {{ form_widget(offre.description) }}</td>  </tr>
+   <tr>  <td> Date  :</td>  <td>{{ form_widget(offre.date) }}</td></tr>
+   <tr>  <td> Région: </td> <td>{{ form_widget(offre.region) }}</td> </tr>
+   <tr> <td>Prix : </td> <td>{{ form_widget(offre.prix) }}</td> </tr>
+ <tr><td> Surface :</td> <td> {{ form_widget(offre.surface) }}</td>  </tr>
+   <tr>  <td> Engagement  :</td>  <td>{{ form_widget(offre.engagement) }}</td></tr>
+   <tr>  <td> Vocation: </td> <td>{{ form_widget(offre.vocation) }}</td> </tr>
+   <tr> <td>  Nombre de chambre: </td> <td>{{ form_widget(offre.nbrchambre) }}</td> </tr>
+    <tr><td>  Surface cuverte:</td> <td> {{ form_widget(offre.surfacecouverte) }}</td>  </tr>
+   <tr>  <td> Nombre d'étage: </td> <td>{{ form_widget(offre.nbrEtage) }}</td> </tr>
+   <tr> <td>  Type: </td> <td>{{ form_widget(offre.type) }}</td> </tr>
+            
+    <tr>  <td><br><br><input type="submit" value="Envoyer"/></td> </tr>
+     
+         {{form_rest(offre)}}
+    </table>
+    </form>
+    </center>
+   {% endblock %}

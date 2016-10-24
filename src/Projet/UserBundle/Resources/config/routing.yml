@@ -1,0 +1,21 @@
+projet_user_homepage:
+    path:     /helloo/{name}
+    defaults: { _controller: ProjetUserBundle:Default:index }
+    
+home_admin:
+    path:     /home_admin
+    defaults: { _controller: ProjetDarnaBundle:admin:lister }
+    
+home_gerant:
+    path:     /home_gerant
+    defaults: { _controller: ProjetDarnaBundle:gerant:lister }   
+    
+home_client:
+    path:     /home_client
+    defaults: { _controller: ProjetDarnaBundle:client:lister }     
+    
+    
+home_back_admin:
+    path:     /home_back_admin
+    defaults: { _controller: ProjetDarnaBundle:Default:redirect }     
+      

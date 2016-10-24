@@ -1,0 +1,20 @@
+projet_user:
+    resource: "@ProjetUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+projet_darna:
+    resource: "@ProjetDarnaBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"  
+    
+    
+projet_mail:
+    resource: "@ProjetMailBundle/Resources/config/routing.yml"
+    prefix:   /
+
+projet_maps:
+    resource: "@ProjetMapsBundle/Resources/config/routing.yml"
+    prefix:   /    
+

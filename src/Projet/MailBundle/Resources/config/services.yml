@@ -1,0 +1,4 @@
+services:
+#    projet_mail.example:
+#        class: Projet\MailBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

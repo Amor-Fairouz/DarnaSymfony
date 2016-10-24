@@ -1,0 +1,95 @@
+Offre:
+    type: entity
+    table: offre
+    indexes:
+        idGerant:
+            columns:
+                - idGerant
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        description:
+            type: string
+            nullable: false
+            length: 200
+            fixed: false
+            comment: ''
+        date:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+        region:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+        prix:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+        surface:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+        engagement:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+        vocation:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+        nbrchambre:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: nbrChambre
+        surfacecouverte:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+            column: surfaceCouverte
+        nbrEtage:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: nbr_etage
+        type:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+    manyToOne:
+        idgerant:
+            targetEntity: Personne
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idGerant:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

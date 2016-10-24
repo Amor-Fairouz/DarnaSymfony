@@ -1,0 +1,19 @@
+{% extends 'ProjetDarnaBundle::layout1.html.twig' %}
+{% block content %}
+    
+  <h1>Recherche Liste des Entreprises </h1>
+  {{form(facture)}} 
+<table border='3'>
+    <tr>
+        <td> Date </td>
+    </tr>
+    {% for i in factures %}
+        <tr>
+         <td> {{ i.date ,{'attr':{'class':'form-control'}}}} </td> 
+        </tr>
+        
+        {% endfor %}
+       
+</table>  {{ socialButtons() }}
+    
+{% endblock %}

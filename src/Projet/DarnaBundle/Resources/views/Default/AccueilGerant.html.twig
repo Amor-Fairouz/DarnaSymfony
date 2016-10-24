@@ -1,0 +1,30 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+
+
+{% block content %}
+    <div align="center"><h1>Espace Gérant</h1></div>
+    <center>
+        <br> <br>
+        <br><br><br>
+        <table>
+            <td> <tr> Réclamations</tr> <tr> <a href="{{path('ListRec')}}">    <img src="{{asset('images/20.jpg')}}"    /></a></tr> </td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 
+            <td><tr>Agences</tr>  <a href="{{path('Afficher_agence')}}">    <img src="{{asset('images/21.jpg')}}"    /></a></tr></td>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <td><tr>Transporteurs</tr>  <a href="{{path('Afficher_transp')}}">    <img src="{{asset('images/22.jpg')}}"    /></a></tr></td>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+            <td><tr>Rendez-Vous</tr>  <a href="{{path('ListRendez')}}">    <img src="{{asset('images/23.jpg')}}"    /></a></tr></td>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+            <td><tr>Offres</tr>  <a href="{{path('afficher_Logement')}}">    <img src="{{asset('images/24.jpg')}}"    /></a></tr></td>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+<td><tr>Factures</tr>  <a href="{{ path('Afficher_Facture') }}" >   <img src="{{asset('images/25.jpg')}}"    /></a></tr></td>    
+        </table>            
+        <br><br><br> <br><br><br> <br><br><br> <br>
+        
+    </center>                                    
+{% endblock %}
+
+
+
+
+
+
+
+

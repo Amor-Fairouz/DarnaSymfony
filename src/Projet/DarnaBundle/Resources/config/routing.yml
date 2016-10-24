@@ -1,0 +1,366 @@
+home_administrateur:
+    path:     /acceuilAdmin
+    defaults: { _controller: ProjetDarnaBundle:Graphics:Stat}
+
+home:
+    path:     /Accueil
+    defaults: { _controller: ProjetDarnaBundle:Default:Accueil }
+
+
+homeGerant:
+    path:     /AccueilGerant
+    defaults: { _controller: ProjetDarnaBundle:Default:AccueilGerant }
+
+
+projet_ajouter_admin:
+    path:     /ajoutAdmin
+    defaults: { _controller: ProjetDarnaBundle:admin:ajout }
+
+projet_afficher_admin:
+    path:     /listerAdmin
+    defaults: { _controller: ProjetDarnaBundle:admin:lister }
+    
+Supprimer:
+    path:     /supprimerAdmin/{id}
+    defaults: { _controller: ProjetDarnaBundle:admin:supprimer } 
+    
+Modifier:
+    path:     /modifierAdmin/{id}
+    defaults: { _controller: ProjetDarnaBundle:admin:modifier }    
+    
+ajouter_Entreprise:
+    pattern:  /ajoutE
+    defaults: { _controller: ProjetDarnaBundle:Entreprise:ajouterEntreprise }
+    
+afficher_Entreprise:
+    pattern:  /listE
+    defaults: { _controller: ProjetDarnaBundle:Entreprise:listerEntreprise }
+    
+ 
+Supprimer_Entreprise:
+    path:     /Sup/{id}
+    defaults: { _controller: ProjetDarnaBundle:Entreprise:supprimerEntreprise}
+    
+modifier_Entreprise:
+    path:     /up/{id}
+    defaults: { _controller: ProjetDarnaBundle:Entreprise:modifierEntreprise}
+    
+rechercher_Entreprise:
+    path:     /rech
+    defaults: { _controller: ProjetDarnaBundle:Entreprise:rechercherEntreprise}
+
+
+
+ajouter_Terrain:
+    pattern:  /ajoutT
+    defaults: { _controller: ProjetDarnaBundle:Terrain:ajouterTerrain }
+    
+    
+afficher_Terrain:
+    pattern:  /listT
+    defaults: { _controller: ProjetDarnaBundle:Terrain:listerTerrain }
+    
+    
+Supprimer_Terrain:
+    path:     /SupT/{id}
+    defaults: { _controller: ProjetDarnaBundle:Terrain:supprimerTerrain}
+    
+    
+modifier_Terrain:
+    path:     /upT/{id}
+    defaults: { _controller: ProjetDarnaBundle:Terrain:modifierTerrain}
+    
+rechercher_Terrain:
+    path:     /rechT
+    defaults: { _controller: ProjetDarnaBundle:Terrain:rechercherTerrain}
+    
+    
+ajouter_Logement:
+    pattern:  /ajoutL
+    defaults: { _controller: ProjetDarnaBundle:Logement:ajouterLogement }
+    
+afficher_Logement:
+    pattern:  /listL
+    defaults: { _controller: ProjetDarnaBundle:Logement:listerLogement }
+    
+
+Supprimer_Logement:
+    path:     /SupL/{id}
+    defaults: { _controller: ProjetDarnaBundle:Logement:supprimerLogement}
+    
+modifier_Logement:
+    path:     /upL/{id}
+    defaults: { _controller: ProjetDarnaBundle:Logement:modifierLogement}
+
+
+rechercher_Logement:
+    path:     /rechL
+    defaults: { _controller: ProjetDarnaBundle:Logement:rechercherLogement}
+     
+    
+afficher_OffreF:
+    pattern:  /listOF
+    defaults: { _controller: ProjetDarnaBundle:Offre:listerOffreF }
+    
+afficher_EntrepriseEF:
+    pattern:  /listEFR
+    defaults: { _controller: ProjetDarnaBundle:Entreprise:listerEntreprisefront } 
+    
+afficher_LogementLF:
+    pattern:  /listEL
+    defaults: { _controller: ProjetDarnaBundle:Logement:listerLogementfront } 
+    
+afficher_TerrainTF:
+    pattern:  /listTL
+    defaults: { _controller: ProjetDarnaBundle:Terrain:listerTerrainfront } 
+    
+
+rechercher_Entreprise_By_Prix:
+    path:     /rechEP
+    defaults: { _controller: ProjetDarnaBundle:Entreprise:rechercherEntrepriseByPrix} 
+    
+rechercher_Tous:
+    path:     /rechTous
+    defaults: { _controller: ProjetDarnaBundle:Offre:recherchegeneral}         
+    
+    
+    
+    
+    
+    
+    
+    
+projet_ajouter_client:
+    path:     /ajoutClient
+    defaults: { _controller: ProjetDarnaBundle:client:ajout }
+
+projet_afficher_client:
+    path:     /listerClient
+    defaults: { _controller: ProjetDarnaBundle:client:lister }
+    
+Supprimer_client:
+    path:     /supprimerClient/{id}
+    defaults: { _controller: ProjetDarnaBundle:client:supprimer } 
+    
+Modifier_client:
+    path:     /modifierClient/{id}
+    defaults: { _controller: ProjetDarnaBundle:client:modifier } 
+ 
+espace_admin:
+    path:     /espaceAdmin
+    defaults: { _controller: ProjetDarnaBundle:Graphics:Stat}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+projet_ajouter_gerant:
+    path:     /ajoutGerant
+    defaults: { _controller: ProjetDarnaBundle:gerant:ajout }
+
+projet_afficher_gerant:
+    path:     /listerGerant
+    defaults: { _controller: ProjetDarnaBundle:gerant:lister }
+    
+Supprimer_gerant:
+    path:     /supprimerGerant/{id}
+    defaults: { _controller: ProjetDarnaBundle:gerant:supprimer } 
+    
+Modifier_gerant:
+    path:     /modifierGerant/{id}
+    defaults: { _controller: ProjetDarnaBundle:gerant:modifier }   
+    
+Modifier_gnt:
+    path:     /session
+    defaults: { _controller: ProjetDarnaBundle:admin:index }
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+AjoutRendezVous:
+    path:     /AjouterRDV/{idOffre}
+    defaults: { _controller: ProjetDarnaBundle:RendezVous:AjoutRendezVous }
+
+AjoutReclamation:
+    path:     /AjouterRec
+    defaults: { _controller: ProjetDarnaBundle:Reclamation:AjoutReclamation }
+
+ListRendez:
+    path:     /ListRendez
+    defaults: { _controller: ProjetDarnaBundle:RendezVous:listeRendez }
+
+ListRec:
+    path:     /ListRec
+    defaults: { _controller: ProjetDarnaBundle:Reclamation:listeRec }
+
+RechercheRec:
+    path:     /RechercheRec
+    defaults: { _controller: ProjetDarnaBundle:Reclamation:Recherche }
+
+RechercheRendez:
+    path:     /RechercheRendez
+    defaults: { _controller: ProjetDarnaBundle:RendezVous:Recherche }
+
+SupprimerRendez:
+    path:     /SupprimerRendez/{id}
+    defaults: { _controller: ProjetDarnaBundle:RendezVous:supprimerRendezVous}
+
+SupprimerRec:
+    path:     /SupprimerRec/{id}
+    defaults: { _controller: ProjetDarnaBundle:Reclamation:supprimerReclamation}
+
+ModifierRec:
+    path:     /ModifierRec/{id}
+    defaults: { _controller: ProjetDarnaBundle:Reclamation:modifierReclamation}
+
+
+ModifierRendez:
+    path:     /ModifierRendez/{id}
+    defaults: { _controller: ProjetDarnaBundle:RendezVous:modifierRendezVous}
+    
+    
+    
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+Ajouter_Facture:
+    path:     /ajoutF
+    defaults: { _controller: ProjetDarnaBundle:Facture:AjouterFacture }
+    
+Afficher_Facture:
+    path:     /afficherF
+    defaults: { _controller: ProjetDarnaBundle:Facture:listerFacture }
+    
+Supprimer_Facture:
+    path:     /suprimerF/{idfacture}
+    defaults: { _controller: ProjetDarnaBundle:Facture:SupprimerFacture }
+    
+Modifier_Facture:
+    path:     /modifF/{idfacture}
+    defaults: { _controller: ProjetDarnaBundle:Facture:ModifierFacture }
+    
+Rechercher_Facture:
+    path:     /rechercheF
+    defaults: { _controller: ProjetDarnaBundle:Facture:ChercherFacture }
+    
+Ajouter_Alerte:
+    path:     /ajouterA
+    defaults: { _controller: ProjetDarnaBundle:Alerte:AjouterAlerte }
+Afficher_Alerte:
+    path:     /afficherA
+    defaults: { _controller: ProjetDarnaBundle:Alerte:listerAlerte }
+Supprimer_Alerte:
+    path:     /suprimerA/{id}
+    defaults: { _controller: ProjetDarnaBundle:Alerte:SupprimerAlerte }
+
+Myapp_chartLine:
+    path:    /chart
+    defaults: {_controller: ProjetDarnaBundle:Graphics:chartLine }
+Myapp_Histogramme:
+    path:    /histog
+    defaults: {_controller: ProjetDarnaBundle:Graphics:chartHistogramme }
+Myapp_Pie:
+    path:    /Pie
+    defaults: {_controller: ProjetDarnaBundle:Graphics:chartPie }
+Myapp_MenuStat:
+    path:    /stat
+    defaults: {_controller: ProjetDarnaBundle:Graphics:Stat }
+Myapp_PDF:
+    path:    /DQL/pdf/{idfacture}
+    defaults: {_controller: ProjetDarnaBundle:Pdf:generatePDF }
+
+Afficher_message:
+    path:    /msg
+    defaults: {_controller: ProjetDarnaBundle:Alerte:msg}
+
+
+
+
+
+
+
+Ajouter_transp:
+    path:     /ajoutTran
+    defaults: { _controller: ProjetDarnaBundle:Transporteur:ajouterTransporteur }
+   
+    
+Afficher_transp:
+    path:     /afficheTran
+    defaults: { _controller: ProjetDarnaBundle:Transporteur:listerTransporteur }
+    
+
+supprimer_transp:
+    path:     /supTran/{id}
+    defaults: { _controller: ProjetDarnaBundle:Transporteur:supprimerTransporteur }
+
+
+
+modifier_transp:
+    path:     /upTran/{id}
+    defaults: { _controller: ProjetDarnaBundle:Transporteur:modifierTransporteur }
+    
+Ajouter_agence:
+    path:     /ajoutAg
+    defaults: { _controller: ProjetDarnaBundle:Agence:ajouterAgence}
+    
+    
+Afficher_agence:
+    path:     /afficheAg
+    defaults: { _controller: ProjetDarnaBundle:Agence:listerAgence}
+    
+    
+supprimer_agence:
+    path:     /supAg/{id}
+    defaults: { _controller: ProjetDarnaBundle:Agence:supprimerAgence }
+    
+    
+modifier_agence:
+    path:     /upAg/{id}
+    defaults: { _controller: ProjetDarnaBundle:Agence:modifierAgence }
+    
+    
+    
+    
+    

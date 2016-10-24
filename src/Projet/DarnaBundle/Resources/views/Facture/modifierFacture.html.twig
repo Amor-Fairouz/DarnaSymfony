@@ -1,0 +1,52 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+ 
+   
+   {% block content %}
+               <center><h1><font color="#337AB7"> Modifier Facture </font></h1></center><br>
+
+   <form style="font-size: 20px" method="POST">
+       <center>
+           <table>
+          <tr>
+              <td style="font: bold;font-size: 18px " color="#337AB7">Date</td>
+              <td>{{ form_widget(Facture.date) }}</td>
+          </tr> 
+          <br>
+           <tr>
+              
+               <td style="font: bold;font-size: 18px ">Nom client</td>
+              <td>{{ form_widget(Facture.idclient,{'attr':{'class':'form-control'}}) }}</td>
+              
+           </tr>
+          
+          <tr>
+              <td style="font: bold;font-size: 18px ">Nom gerant</td>
+              <td>{{ form_widget(Facture.idgerant,{'attr':{'class':'form-control'}}) }}</td>
+          </tr> 
+          <br>
+          <tr>
+              <td style="font: bold;font-size: 18px ">Engagement</td>
+              <td>{{ form_widget(Facture.idoffre,{'attr':{'class':'form-control'}}) }}</td>
+          </tr> 
+           
+          
+    
+      </table>
+          <br>
+          
+          
+                 <input type="submit" class="btn btn-primary" value="Modifier" />
+                  {{ form_rest(Facture)}}
+<br>
+          <br>
+          <br>
+       </center>
+ 
+     <br>
+          <br>
+          <br>
+          <br>
+     
+  </form>  {{ socialButtons() }}
+
+{% endblock  %}

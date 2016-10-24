@@ -1,0 +1,39 @@
+{% extends 'ProjetDarnaBundle::layout1.html.twig' %}
+{% block content %}
+    
+  <h1>Recherche Liste des Offres </h1>
+{{form(offre)}}
+<table border='3'>
+    <tr>
+        
+        <td> Description </td>
+        <td> Date </td>
+        <td> Région </td>
+        <td> Prix </td>
+        <td> Surface </td>
+        <td> Engagement </td>
+        <td> Vocation</td>
+        <td> Nombre de chambres</td>
+        <td> Surface couverte</td>
+        <td> Nombre d'étage</td>
+        <td> Type</td>
+    </tr>
+    {% for i in offres %}
+        <tr>
+            
+            <td> {{ i.description }} </td>
+            <td> {{ i.date }} </td>
+            <td> {{ i.region }} </td>
+            <td> {{ i.prix }} </td>
+            <td> {{ i.surface }} </td>
+            <td> {{ i.engagement }} </td>
+            <td> {{ i.vocation }} </td>
+            <td> {{ i.nbrchambre }} </td>
+            <td> {{ i.surfacecouverte }} </td>
+            <td> {{ i.nbrEtage }} </td>
+            <td> {{ i.type }} </td>
+             </tr>
+        {% endfor %}
+</table>
+    
+{% endblock %}

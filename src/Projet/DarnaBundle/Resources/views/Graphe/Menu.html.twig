@@ -1,0 +1,39 @@
+
+{% extends 'ProjetDarnaBundle::layout9.html.twig' %}
+{% block ptitre %} Espace Administrateur{% endblock %}
+{% block content %}
+    <div align="center"><h1>Espace Administrateur</h1></div>
+    
+    
+    
+
+    <center>
+        
+
+    
+    
+    
+    <br> <br>
+        <br><br><br>
+        <table>
+            <td> <tr> PieChart</tr> <tr> <a href="{{path('Myapp_Pie')}}">    <img src="{{asset('images/pie.png')}}"    /></a></tr> </td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 
+            <td><tr>Histogramme</tr>  <a href="  {{ path('Myapp_Histogramme') }} ">    <img src="{{asset('images/histo.png')}}"    /></a></tr></td>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <td><tr>LineChart</tr>  <a href="  {{ path('Myapp_chartLine') }} ">    <img src="{{asset('images/linepng.png')}}"    /></a></tr></td>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+            
+        </table>            
+        <br><br><br> <br><br><br> <br><br><br> <br>
+    
+    
+    
+    
+    
+    
+    
+    
+    </center>
+    <br>
+    <br>
+    <br>
+    {%endblock%}
+    
+   

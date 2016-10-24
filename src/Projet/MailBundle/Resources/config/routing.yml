@@ -1,0 +1,10 @@
+projet_mail_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ProjetMailBundle:Default:index }
+
+projet_mail_redirection:
+    path:     /redirection
+    defaults: { _controller: ProjetMailBundle:Default:redirection }
+projet_mail_sendMail:
+    path:     /sendMail/{mail}
+    defaults: {_controller: ProjetMailBundle:Default:sendMail } 

@@ -1,0 +1,44 @@
+{% extends 'ProjetDarnaBundle::layout9.html.twig' %}
+{% block ptitre %} Gérant {% endblock %}
+{% block content %}
+    
+    
+    
+     <center><h1><font color="#337AB7"> Liste des Gérants </font></h1></center><br>
+             <a href="  {{ path('projet_ajouter_gerant') }} "><input type="submit" class="btn btn-primary" value="Ajouter un gérant"/></a>
+             <br>
+        <table class="table table-hover">
+    <tr>
+        
+        <td><b> nom </b></td>
+        <td><b> prenom </b></td>
+        <td><b> Date de naissance </b></td>
+        <td><b> telephone</b> </td>
+     
+        <td><b> Email</b> </td>
+        <td><b> Mot de Passe</b> </td>
+       <td><b> Agence</b> </td>
+        <td><b><font color="red"> Supprimer</font></b> </td>
+        <td><b><font color="green"> Modifier</font></b> </td>
+        
+        
+    </tr>
+    {% for personne in personnes %}
+        <tr>
+            
+            <td> {{ personne.nom }} </td>
+              <td> {{ personne.prenom }} </td>
+            <td> {{ personne.datenaiss }} </td>
+            <td> {{ personne.tel }} </td>
+        
+                <td> {{ personne.email }} </td>
+                <td>{% for i in 1..personne.password|length %}*{% endfor %} </td>
+                  <td> {{ personne.idagence.nom }} </td>
+            <td> <a href="{{path('Supprimer_gerant',{'id':personne.id})}}" target="_blank"> <img src="{{asset('images/delete.png')}}"/> </a></td>
+            <td> <a href="{{path('Modifier_gerant',{'id':personne.id})}}" target="_blank"> <img src="{{asset('images/update.png')}}"/> </a></td>
+        {% endfor %}
+</table>
+    
+      {{ socialButtons() }}
+    
+       {% endblock %}

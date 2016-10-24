@@ -1,0 +1,20 @@
+{% extends 'ProjetDarnaBundle::layout9.html.twig' %}
+{% block ptitre %} Ajouter administrateur{% endblock %}
+{% block content %}
+    <form method="POST">
+   <table>
+       
+        <tr><td> Nom :</td> <td> {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}</td>  </tr>
+  <tr>  <td> Prenom :</td>  <td>{{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}</td></tr>
+   <tr>  <td>Date de naisance : </td> <td>{{ form_widget(form.datenaiss, {'attr': {'class': 'form-control'}}) }}</td> </tr>
+    <tr> <td>Telephone : </td> <td>{{ form_widget(form.tel, {'attr': {'class': 'form-control'}}) }}</td> </tr>
+    <tr> <td>E-Mail : </td> <td>{{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}</td> </tr>
+        <tr> <td>Password : </td> <td>{{ form_widget(form.password, {'attr': {'class': 'form-control'}}) }}</td> </tr>
+
+     <tr>  <td> <br><br>{{ form_widget(form.Ajouter, {'attr': {'class': 'btn btn-primary'}})  }}</td> </tr>
+     {{form_rest(form)}}
+     
+         
+    </table>  {{ socialButtons() }}
+</form>
+  {% endblock %}

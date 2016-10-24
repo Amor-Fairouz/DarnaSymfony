@@ -1,0 +1,46 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+{% block content %}
+     <center><h1><font color="#337AB7"> Liste des Transporteurs </font></h1></center><br>
+     <table cellspacing=6 width=100%> <tr>
+             <td><div align="left" >    <a href="  {{ path('Ajouter_transp') }} "><input type="submit" class="btn btn-primary" value="Ajouter un Transporteur"/></a>
+     </div></td>
+     
+   
+</tr></table>
+    <center>  
+    <table class="table table-hover">
+            <tr>
+                <td> Nom</td> 
+                <td> Prenom  </td>
+                <td> Télephone </td>
+                <td> Adresse</td>
+                
+                 <td> <font color="red">Supprimer</font></td>
+                <td><font color="green"> Modifier</font></td>
+              
+                
+            </tr>
+
+
+            {% for i in transporteur %}
+
+
+                <tr> <td> <font color="purple"> {{ i.nom }}</font></td>
+                    <td> <font color="purple"> {{ i.prenon}}</font></td>
+                    <td> <font color="purple"> {{ i.tel }}</font></td>
+                    <td><font color="purple"> {{ i.adresse }}</font></td>
+                    
+   <td><font color="purple"> <a  href="{{ path('supprimer_transp',{'id':i.id}) }}"><img src="{{asset('images/delete.png')}}"/></a></font></td>
+<td><font color="purple"> <a  href="{{ path('modifier_transp',{'id':i.id}) }}"><img src="{{asset('images/update.png')}}"/></a></font></td>
+
+   
+         
+
+                
+                </tr>
+                {% endfor %}
+        </table>  {{ socialButtons() }} </center>
+{% endblock %}
+

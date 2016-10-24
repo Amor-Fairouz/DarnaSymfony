@@ -1,0 +1,50 @@
+Facture:
+    type: entity
+    table: facture
+    indexes:
+        idGerant:
+            columns:
+                - idGerant
+                - idClient
+        idClient:
+            columns:
+                - idClient
+        idOffre:
+            columns:
+                - idOffre
+    id:
+        idfacture:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: idFacture
+            generator:
+                strategy: IDENTITY
+    fields:
+        date:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+        idgerant:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: idGerant
+        idclient:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: idClient
+        idoffre:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: idOffre
+    lifecycleCallbacks: {  }

@@ -1,0 +1,38 @@
+{# empty Twig template #}
+{% extends 'ProjetDarnaBundle::layout1.html.twig' %}
+{% block content %}
+    
+     <center><h1><font color="#337AB7"> Rechercher des Terrains </font></h1></center><br>
+        <form method="POST">
+Vocation{{form_widget(offre.vocation)}}     {{form_widget(offre.Rechercher,{'attr':{'class':'btn btn-primary'}})}}
+{{form_rest(offre)}}
+    </form>
+<table class="table table-hover">   
+    <tr>
+        
+        <td><font color="green"> Description</font> </td>
+        <td><font color="green"> Date </font> </td>
+        <td> <font color="green">Région</font>  </td>
+        <td> <font color="green">Prix </font> </td>
+        <td><font color="green"> Surface </font> </td>
+        <td> <font color="green">Engagement</font>  </td>
+        <td> <font color="green">Vocation</font> </td>
+         <td> <font color="green">Image</font> </td>
+    </tr>
+    {% for i in offres %}
+        <tr>
+            
+            <td> {{ i.description }} </td>
+            <td> {{ i.date }} </td>
+            <td> {{ i.region }} </td>
+            <td> {{ i.prix }} </td>
+            <td> {{ i.surface }} </td>
+            <td> {{ i.engagement }} </td>
+            <td> {{ i.vocation }} </td>
+                  <td><img src="{{ asset('uploads/documents/'~i.path) }}" alt="monimg2" width="100" height="100"/></td>
+
+             </tr>
+        {% endfor %}
+</table>  {{ socialButtons() }}
+    
+{% endblock %}

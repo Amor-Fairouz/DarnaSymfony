@@ -1,0 +1,88 @@
+Personne:
+    type: entity
+    table: personne
+    indexes:
+        idAgence:
+            columns:
+                - idAgence
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+        prenom:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+        datenaiss:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+        tel:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+        ville:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+        pays:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+        password:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+        email:
+            type: string
+            nullable: false
+            length: 40
+            fixed: false
+            comment: ''
+        adresse:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+        type:
+            type: string
+            nullable: false
+            length: 5
+            fixed: false
+            comment: ''
+    manyToOne:
+        idagence:
+            targetEntity: Agence
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idAgence:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

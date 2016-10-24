@@ -1,0 +1,112 @@
+<?php
+
+namespace Projet\DarnaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Offre
+ *
+ * @ORM\Table(name="offre", indexes={@ORM\Index(name="idGerant", columns={"idGerant"})})
+ * @ORM\Entity
+ */
+class Offre
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=200, nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date", type="string", length=20, nullable=false)
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="region", type="string", length=30, nullable=false)
+     */
+    private $region;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prix", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $prix;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="surface", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $surface;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="engagement", type="string", length=20, nullable=false)
+     */
+    private $engagement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vocation", type="string", length=30, nullable=true)
+     */
+    private $vocation;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbrChambre", type="integer", nullable=true)
+     */
+    private $nbrchambre;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="surfaceCouverte", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $surfacecouverte;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbr_etage", type="integer", nullable=true)
+     */
+    private $nbrEtage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=20, nullable=false)
+     */
+    private $type;
+
+    /**
+     * @var \Personne
+     *
+     * @ORM\ManyToOne(targetEntity="Personne")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idGerant", referencedColumnName="id")
+     * })
+     */
+    private $idgerant;
+
+
+}

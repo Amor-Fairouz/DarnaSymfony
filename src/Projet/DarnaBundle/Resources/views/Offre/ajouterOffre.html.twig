@@ -1,0 +1,76 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+{% block content %}
+    <center>  
+    <h1>Ajouter Logement</h1>
+    <form method="POST" >
+       
+        <table>
+         <tr>
+             <td style="font: bold;font-size: 18px"> Description :</td>
+             <td>{{form_widget(offre.description)}}</td>
+         </tr>
+         <tr>
+             <td style="font: bold;font-size: 18px">Date</td>
+             <td>{{form_widget(offre.date)}}</td>
+         </tr>
+           <tr>
+             <td style="font: bold;font-size: 18px">Région</td>
+             <td>{{form_widget(offre.region)}}</td>
+         </tr>
+         
+         <tr>
+             <td style="font: bold;font-size: 18px">Prix</td>
+             <td>{{form_widget(offre.prix)}}</td>
+         </tr>
+         
+         <tr>
+             <td style="font: bold;font-size: 18px">Surface</td>
+             <td>{{form_widget(offre.surface)}}</td>
+         </tr>
+         <tr>
+             <td style="font: bold;font-size: 18px">Engagement</td>
+             <td>{{form_widget(offre.engagement)}}</td>
+         </tr>
+           <tr>
+             <td style="font: bold;font-size: 18px">Vocation</td>
+             <td>{{form_widget(offre.vocation)}}</td>
+         </tr>
+         
+          <tr>
+             <td style="font: bold;font-size: 18px">Nombre de chambre</td>
+             <td>{{form_widget(offre.nbrchambre)}}</td>
+         </tr>
+         
+          <tr>
+             <td style="font: bold;font-size: 18px">Surface couverte</td>
+             <td>{{form_widget(offre.surfacecouverte)}}</td>
+         </tr>
+         
+         <tr>
+             <td style="font: bold;font-size: 18px">Nombre d'étage</td>
+             <td>{{form_widget(offre.nbrEtage)}}</td>
+         </tr>
+         
+         <tr>
+             <td style="font: bold;font-size: 18px">Type</td>
+             <td>{{form_widget(offre.type)}}</td>
+         </tr>
+         
+         <tr>
+             <td style="font: bold;font-size: 18px">id du gérant</td>
+             <td>{{form_widget(offre.idgerant)}}</td>
+         </tr>
+         <tr>
+              <td style="font: bold;font-size: 18px">id du gérant</td>
+         <img src="{{app.request.basepath}}/news/{{offre.image}}"/>
+         </tr>
+        </table>
+         
+         <input type="submit" value="Ajouter">
+         {{form_rest(offre)}}
+         
+    </form>
+    </center>
+         {%endblock%}

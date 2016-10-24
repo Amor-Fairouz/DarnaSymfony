@@ -1,0 +1,49 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+{% block content %}
+<center><h1><font color="#337AB7"> Liste des alertes </font></h1></center><br>
+
+    <center>  
+        <table class="table table-hover">
+            <tr>  
+              <td> PrixMin </td> 
+              <td>PrixMax</td>
+              <td>Region</td>
+               <td>Engagement</td>
+               <td>Type de bien</td>
+                <td>Surface</td>
+                <td>Supprimer</td>
+            </tr>
+
+{% for i in Alerte %}
+                <tr> 
+                   <td> 
+                    <font color="#337AB7"> {{ i.prixmin }}</font>    
+                   </td>
+                   <td> <font color="v"> {{ i.prixmax }}</font></td>
+                   <td> <font color="v"> {{ i.region }}</font></td>
+                   <td>      <font color="#337AB7""> {{ i.engagement}}</font></td>
+
+                   <td> <font color="v"> {{ i.typedebien}}</font></td>
+                   <td>   <font color="#337AB7"> {{ i.surface }}</font></td>
+
+   <td><font color="purple"> <a  href="{{ path('Supprimer_Alerte',
+{'id':i.id}) }}"><img type="submit"  src="{{asset('images/delete.png')}}"/></a></font></td>
+               
+   
+                </tr>
+                {% endfor %}
+        </table> 
+        {{ socialButtons() }}
+    </center>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+{% endblock %}

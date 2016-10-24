@@ -1,0 +1,105 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+
+  {% block  content %}
+
+
+                <!-- /.row -->
+
+                <div >
+    
+     
+                 <div >
+     <form action="{{ path('RechercheRendez') }}" method="POST">
+
+
+
+        <div> 
+
+
+        
+
+
+            <div class="form-group input-group">
+
+
+                {{form_widget(Rendezvous.lieu,{'attr':{'class':'form-control'}})}}
+
+
+                <span class="input-group-btn">
+                  
+                     {{ form_widget(Rendezvous.lieu)}}
+                      
+                      <div class="btn btn-default">
+                          <i clas="fa fa-search">
+                       {{form_rest(Rendezvous)}}
+                          </i>
+                    </div>
+                 
+                </span>
+
+            </div>
+    
+            <center>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Liste des Rendez-vous</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped ">
+                                <thead>
+                                    <tr class="sucess">
+                                        <th class ="success">Date du Rendez-vous</th>
+                                        <th class="success">lieu du Rendez-vous </th>
+                                        <th class="success">Nom et Prenom du client </th>
+                                       <th class="success"> </th>
+                                        {% for r in RendezVouss %}
+
+                                        <tr>
+                                            <td class="">{{r.date}}</td>
+                                             <td class="">{{r.lieu}}</td>
+                                            <td class="">{{r.idclient.nom}} {{r.idclient.prenom}}</td> 
+                                              <td>
+                                                     <font class="btn btn-sm btn-success"> 
+                                    <a  href="{{ path('ModifierRendez',{'id':r.id}) }}">modifier</a>
+                                    </font>
+                                           <font class="btn btn-sm btn-warning"> 
+                                    <a  href="{{ path('RechercheRendez') }}">Recherche</a>
+                                   
+                                    </font>
+                                    
+                                                  <font class="btn btn-sm btn-warning"> 
+                                    <a  href="{{ path('SupprimerRendez',{'id':r.id}) }}">supprimer</a>
+                                   
+                                    </font>
+                                              
+                                           
+                                              </td>
+
+                                        </tr> 
+
+                                    {% endfor %}
+                                    
+                            </table>   
+                                    <div class="alert alert-danger">
+                    <strong>Chercher Vos Rendez-vous !! </strong>
+                </div>
+                        </div>     </div>   </div>    
+        </div>  
+
+    </form>    
+                    </div>   
+                   
+                <!-- /.row -->
+</div>
+               
+</div> 
+                <!-- /.row -->
+                
+         
+           {{ socialButtons() }}
+{% endblock%}
+
+

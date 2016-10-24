@@ -1,0 +1,49 @@
+<?php
+
+namespace Esprit\DarnaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Reclamation
+ *
+ * @ORM\Table(name="reclamation", indexes={@ORM\Index(name="idClient", columns={"idClient"})})
+ * @ORM\Entity
+ */
+class Reclamation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="question", type="string", length=100, nullable=false)
+     */
+    private $question;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponse", type="string", length=100, nullable=false)
+     */
+    private $reponse;
+
+    /**
+     * @var \Personne
+     *
+     * @ORM\ManyToOne(targetEntity="Personne")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idClient", referencedColumnName="id")
+     * })
+     */
+    private $idclient;
+
+
+}

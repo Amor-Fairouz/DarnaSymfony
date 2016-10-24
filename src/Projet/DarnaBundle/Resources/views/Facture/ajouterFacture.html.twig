@@ -1,0 +1,58 @@
+{% extends "ProjetDarnaBundle::layout1.html.twig" %}
+
+
+{% block content %}
+    <center>  
+        <center><h1><font color="#337AB7"> Ajouter Facture </font></h1></center><br>
+
+    <form method="POST">
+       
+        <table>
+        <tr>
+             <td style="font: bold;font-size: 18px " > Date</td>
+             <td> 
+                 {{form_widget(Facture.date,{'attr':{'class':'form-control'}})}}
+                 
+             </td>
+               
+
+        </tr>
+        
+        <tr>
+            <td style="font: bold;font-size: 18px ">Nom du Gerant</td>
+             <td>{{form_widget(Facture.idgerant,{'attr':{'class':'form-control'}})}}</td>
+        </tr>
+        
+        <tr>
+             <td style="font: bold;font-size: 18px">Nom du Client</td>
+             <td>{{form_widget(Facture.idclient,{'attr':{'class':'form-control'}})}}</td>
+        </tr>
+        
+        
+        <tr>
+             <td style="font: bold;font-size: 18px">Engagement</td>
+             <td style="font: bold;font-size: 18px">{{form_widget(Facture.idoffre,{'attr':{'class':'form-control'}})}}</td>
+        </tr>
+        
+        </table>
+        <br><br>
+         <input class="btn btn-primary" type="submit" onclick="return confirm('êtes-vous sûr de vouloir valider ces coordonnées?')" value="Ajouter">
+      
+         {{form_rest(Facture)}}
+         
+         
+         
+      <br> <br>
+
+</form>
+         
+         
+    </form>
+    </center>
+         <br><br>
+                  <br><br>
+                           <br><br>
+         <br><br>
+  {{ socialButtons() }}
+
+         {%endblock%}
